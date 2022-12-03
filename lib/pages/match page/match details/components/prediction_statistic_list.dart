@@ -9,7 +9,7 @@ class PredictionStatisticsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (match.statistic == null || match.statistic!.keys.isEmpty) {
+    if (match.statistic == null || match.statisticLength == 0) {
       return const Center(
         child: Text('No data Available yet'),
       );
@@ -18,7 +18,7 @@ class PredictionStatisticsList extends StatelessWidget {
     return ListView.builder(
       itemCount: itemLength,
       itemBuilder: (ctx, i) {
-        int itemsWidth = match.predictions!.length;
+        int itemsWidth = match.statisticLength;
         int itemWidth = match.statistic!.values.toList()[i];
         double widgetLength = 100;
         double cWidth = (itemWidth / itemsWidth) * widgetLength;

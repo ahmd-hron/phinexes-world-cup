@@ -38,28 +38,28 @@ class _RulesListState extends State<RulesList> {
             ? const Center(
                 child: Text('something went wrong getting the rules '),
               )
-            : Padding(
-                padding: EdgeInsets.only(top: getPercentScreenHeight(10)),
-                child: ListView.builder(
-                  itemBuilder: (ctx, i) {
-                    return Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(
-                              bottom: 10, left: 10, right: 10),
-                          child: Column(children: [
-                            Text(
-                              '${i + 1}. ${ruleProv.rules!.rules![i]}',
-                              textAlign: TextAlign.left,
-                            ),
-                            const Divider()
-                          ]),
-                        ),
-                      ],
-                    );
-                  },
-                  itemCount: ruleProv.rules!.rules!.length,
-                ),
+            : ListView.builder(
+                padding: EdgeInsets.only(
+                    top: getPercentScreenHeight(3),
+                    bottom: getPercentScreenHeight(3)),
+                itemBuilder: (ctx, i) {
+                  return Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(
+                            bottom: 10, left: 10, right: 10),
+                        child: Column(children: [
+                          Text(
+                            '${i + 1}. ${ruleProv.rules!.rules![i]}',
+                            textAlign: TextAlign.left,
+                          ),
+                          const Divider()
+                        ]),
+                      ),
+                    ],
+                  );
+                },
+                itemCount: ruleProv.rules!.rules!.length,
               );
   }
 }

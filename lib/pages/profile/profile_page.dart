@@ -12,26 +12,45 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
-          margin: EdgeInsets.only(top: getPercentScreenHeight(5)),
-          child: const Center(
-              child: Text(
-            'Overall predictions',
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-          ))),
-      const PredictionList(),
-      Padding(
-          padding: EdgeInsets.only(top: getPercentScreenWidth(3)),
-          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            logOut(context),
-            SizedBox(
-              width: getPercentScreenWidth(5),
-            ),
-            changePassword(context)
-          ])),
-    ]);
+    return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text('My Predictions'),
+          ),
+        ),
+        body: Column(children: [
+          const PredictionList(),
+          Padding(
+              padding: EdgeInsets.only(top: getPercentScreenHeight(1)),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                logOut(context),
+                SizedBox(
+                  width: getPercentScreenWidth(5),
+                ),
+                changePassword(context)
+              ])),
+        ]));
+    // return Column(children: [
+    //   Container(
+    //       margin: EdgeInsets.only(top: getPercentScreenHeight(5)),
+    //       child: const Center(
+    //           child: Text(
+    //         'OverAll Predictions',
+    //         style: TextStyle(
+    //             color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+    //       ))),
+    //   const PredictionList(),
+    //   Padding(
+    //       padding: EdgeInsets.only(top: getPercentScreenWidth(3)),
+    //       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+    //         logOut(context),
+    //         SizedBox(
+    //           width: getPercentScreenWidth(5),
+    //         ),
+    //         changePassword(context)
+    //       ])),
+    // ]);
   }
 
   Widget logOut(BuildContext context) {

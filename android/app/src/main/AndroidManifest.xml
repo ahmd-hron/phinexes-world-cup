@@ -2,7 +2,7 @@
     package="com.example.world_cup">
      <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="world_cup"
+        android:label="World Cup"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher_main_foreground">
         <activity

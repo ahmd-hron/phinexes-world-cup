@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
               theme: MyTheme.darkTheme,
               darkTheme: MyTheme.darkTheme,
               themeMode: ThemeManager.instance.themeMode,
-              title: 'Flutter Demo',
+              title: 'World Cup',
               home: !appState.sizeInit
                   ? const LoadingPage()
                   : FutureBuilder(

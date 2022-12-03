@@ -159,4 +159,14 @@ class Match with ChangeNotifier {
     }
     return randomColor;
   }
+
+  int get statisticLength {
+    if (statistic == null) return 0;
+    int total = 0;
+    dynamic list = statistic!.values.toList();
+    for (var i = 0; i < list.length; i++) {
+      total += (list[i] as int);
+    }
+    return total;
+  }
 }

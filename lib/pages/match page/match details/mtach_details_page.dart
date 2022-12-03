@@ -9,13 +9,22 @@ class MatchDetails extends StatelessWidget {
   final Match match;
   const MatchDetails({super.key, required this.match});
 
+  int get matchIndex {
+    if (match.predictions == null || match.predictions!.isEmpty) return 0;
+    return 1;
+  }
+
+  bool get showPredictions {
+    return match.predictions != null && match.predictions!.isNotEmpty;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
       padding: EdgeInsets.only(top: getPercentScreenHeight(3)),
       child: ContainedTabBarView(
-        initialIndex: 1,
+        initialIndex: matchIndex,
         tabs: const [Text('Statistics'), Text('Team Predictions')],
         views: [
           MatchDetailsBody(
@@ -24,7 +33,14 @@ class MatchDetails extends StatelessWidget {
           SizedBox(
             child: Column(
               children: [
-                Expanded(child: PredectionList(match: match)),
+                showPredictions
+                    ? Expanded(child: PredectionList(match: match))
+                    : const Expanded(
+                        child: Center(
+                          child: Text(
+                              'Match predictions will be available when match starts'),
+                        ),
+                      ),
               ],
             ),
           ),

@@ -19,7 +19,8 @@ class MatchWidget extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              if (match.predictions!.isEmpty) {
+              if (match.statistic == null ||
+                  match.statistic!.keys.toList().isEmpty) {
                 showDialog(
                     context: context,
                     builder: (ctx) {

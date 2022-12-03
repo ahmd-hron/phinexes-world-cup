@@ -20,7 +20,7 @@ class PredictionsStaticsResoults extends StatelessWidget {
       child: ListView.builder(
         itemCount: 3,
         itemBuilder: (ctx, i) {
-          int itemsWidth = match.predictions!.length;
+          int itemsWidth = match.statisticLength;
           int itemWidth = match.statisticRe!.values.toList()[i];
           double widgetLength = 100;
           double cWidth = (itemWidth / itemsWidth) * widgetLength;

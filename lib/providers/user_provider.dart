@@ -36,16 +36,16 @@ class UserData {
     );
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setString(userKey, user!.toJson());
-    saveUserLoginDate();
+    // saveUserLoginDate();
   }
 
   Future<void> readUserData(BuildContext context) async {
     await readUserAuthData();
     await readMatchesDate();
-    await readUserLoginDate(context);
-    if (user != null && logingDate == null) {
-      saveUserLoginDate();
-    }
+    // await readUserLoginDate(context);
+    // if (user != null && logingDate == null) {
+    //   saveUserLoginDate();
+    // }
   }
 
   Future<void> readUserAuthData() async {

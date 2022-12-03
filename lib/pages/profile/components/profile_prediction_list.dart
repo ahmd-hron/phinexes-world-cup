@@ -33,14 +33,14 @@ class _PredictionListState extends State<PredictionList> {
   Widget build(BuildContext context) {
     return loading
         ? SizedBox(
-            height: getPercentScreenHeight(75),
+            height: getPercentScreenHeight(70),
             child: const Center(
               child: CircularProgressIndicator(),
             ),
           )
         : Container(
             margin: const EdgeInsets.all(5),
-            height: getPercentScreenHeight(75),
+            height: getPercentScreenHeight(70),
             child: Card(
               color: Colors.white.withOpacity(0.08),
               elevation: 4,
